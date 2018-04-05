@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>modal</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)='close()'>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Action Switch</ion-label>
+      <ion-toggle [(ngModel)]="profile.actionSwitch"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary">Name</ion-label>
+      <ion-input placeholder="input name" [(ngModel)]="profile.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]="profile.gender">
+        <ion-option value="m">Male</ion-option>
+        <ion-option value="f">Femail</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Domestic</ion-label>
+      <ion-checkbox [(ngModel)]="profile.location"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Start Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="profile.startTime"></ion-datetime>
+    </ion-item>
+
+  </ion-list>
+
+
+  <button ion-button full (click)="save()">Save</button>
+</ion-content>
